@@ -15,9 +15,17 @@ module.exports = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
+
+            {
+                test: /\.(ts|tsx)?$/,
+                use: {
+                    loader: 'awesome-typescript-loader'
+                    },
+                exclude: /node_modules/
+            },
         ],
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
+    resolve: { extensions: ["*", ".js", ".jsx",".tsx"] },
     output: {
         path: path.resolve(__dirname, "dist/"),
         publicPath: "/dist/",
