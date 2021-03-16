@@ -4,6 +4,7 @@ const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
+    devtool: 'inline-source-map',
     module: {
         rules: [{
                 test: /\.(js|jsx)$/,
@@ -15,17 +16,14 @@ module.exports = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
-
             {
-                test: /\.(ts|tsx)?$/,
-                use: {
-                    loader: 'awesome-typescript-loader'
-                    },
-                exclude: /node_modules/
-            },
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+              }
         ],
     },
-    resolve: { extensions: ["*", ".js", ".jsx", ".tsx"] },
+    resolve: { extensions: ["*", ".js", ".jsx", ".tsx", ".ts"] },
     output: {
         path: path.resolve(__dirname, "dist/"),
         publicPath: "/dist/",
