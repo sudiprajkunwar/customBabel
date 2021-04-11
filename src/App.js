@@ -1,10 +1,12 @@
 import React from "react";
-import CakeContainer from "./components/CakeContainer";
+import CakeContainerr from "./components/CakeContainerr"
+import Test2 from "./components/Test2"
 
 const App = () => {
   return (
     <div className="App"> 
-      <CakeContainer/>
+    <CakeContainerr/>
+    <Test2/>
     </div>
     )
 };
